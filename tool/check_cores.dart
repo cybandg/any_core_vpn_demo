@@ -6,8 +6,8 @@
 // from setup_cores.json in the project root.
 //
 // Usage:
-//   dart run tools/check_cores.dart
-//   GITHUB_TOKEN=xxx dart run tools/scripts/check_cores.dart   (higher rate limit)
+//   dart run tool/check_cores.dart
+//   GITHUB_TOKEN=xxx dart run tool/scripts/check_cores.dart   (higher rate limit)
 
 import 'dart:async';
 import 'dart:convert';
@@ -75,7 +75,7 @@ Future<String> latestPrerelease(String repo) async {
 }
 
 Future<void> main(List<String> argv) async {
-  final scriptDir = File.fromUri(Platform.script).parent; // <root>/tools
+  final scriptDir = File.fromUri(Platform.script).parent; // <root>/tool
   final projectRoot = scriptDir.parent;                   // <root>
   final sep = Platform.pathSeparator;
   final configFile = Platform.environment['CONFIG_FILE'] ??

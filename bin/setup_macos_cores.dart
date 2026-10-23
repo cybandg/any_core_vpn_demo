@@ -1,5 +1,5 @@
 // Entry point for: dart run any_core_vpn:setup_macos_cores
-// Forwards ALL arguments to tools/macos/setup_macos_cores.dart inside this package.
+// Forwards ALL arguments to tool/macos/setup_macos_cores.dart inside this package.
 
 import 'dart:convert';
 import 'dart:io';
@@ -53,7 +53,7 @@ Future<String> resolvePluginRoot() async {
   '(so the cores are packed into the .app bundle) and into the runtime copy '
   '~/Library/Application Support/any_core_vpn/cores. Versions come from '
   'setup_cores.json (plugin root), CLI args override them. Requires: macOS on '
-  'Apple Silicon, Xcode command line tools (xcrun swiftc), tar, ditto.',
+  'Apple Silicon, Xcode command line tool (xcrun swiftc), tar, ditto.',
   args: [
     ['--xray-version <ver>', 'Xray-core version (overrides setup_cores.json)'],
     [
@@ -82,7 +82,7 @@ Future<String> resolvePluginRoot() async {
 )
 Future<void> main(List<String> argv) async {
   final pluginRoot = await resolvePluginRoot();
-  final script = '$pluginRoot/tools/macos/setup_macos_cores.dart';
+  final script = '$pluginRoot/tool/macos/setup_macos_cores.dart';
 
   if (!File(script).existsSync()) {
     stderr.writeln('ERROR: script not found: $script');

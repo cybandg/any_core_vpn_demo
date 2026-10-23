@@ -12,11 +12,11 @@
 //
 // Versions: CLI args > setup_cores.json (plugin root) > built-in defaults.
 //
-// Requirements: macOS on Apple Silicon, tar, ditto, Xcode CLI tools (swiftc).
+// Requirements: macOS on Apple Silicon, tar, ditto, Xcode CLI tool (swiftc).
 //
 // Usage:
-//   dart tools/macos/setup_macos_cores.dart
-//   dart tools/macos/setup_macos_cores.dart --xray-version 26.7.28 --singbox-version 1.14.0
+//   dart tool/macos/setup_macos_cores.dart
+//   dart tool/macos/setup_macos_cores.dart --xray-version 26.7.28 --singbox-version 1.14.0
 
 import 'dart:convert';
 import 'dart:io';
@@ -30,7 +30,7 @@ const _usage = '''
 setup_macos_cores.dart - install macOS cores (sing-box / xray / helper)
 
 Usage:
-  dart tools/macos/setup_macos_cores.dart [options]
+  dart tool/macos/setup_macos_cores.dart [options]
 
 Versions (precedence: CLI > setup_cores.json > error):
   --singbox-version <ver>    sing-box version
@@ -260,7 +260,7 @@ Future<void> syncSwiftPmResources(
 // ---------- main ----------
 
 Future<void> main(List<String> argv) async {
-  final scriptDir = File.fromUri(Platform.script).parent; // <root>/tools/macos
+  final scriptDir = File.fromUri(Platform.script).parent; // <root>/tool/macos
   final pluginRoot = scriptDir.parent.parent; // <root>
 
   var configFile = '${pluginRoot.path}${sep}setup_cores.json';
@@ -333,7 +333,7 @@ Future<void> main(List<String> argv) async {
 
   for (final cmd in ['tar', 'ditto', 'xcrun']) {
     final p = resolveCommand(cmd);
-    if (p == null) fail("'$cmd' not found (install Xcode command line tools)");
+    if (p == null) fail("'$cmd' not found (install Xcode command line tool)");
     note('$cmd : $p');
   }
 
@@ -440,7 +440,7 @@ Future<void> main(List<String> argv) async {
     if (!skipHelper) {
       log('Compiling supervisor (helper.swift)');
       final helperSrc =
-          '${pluginRoot.path}${sep}tools${sep}macos${sep}helper.swift';
+          '${pluginRoot.path}${sep}tool${sep}macos${sep}helper.swift';
       if (!File(helperSrc).existsSync()) {
         fail('helper.swift not found: $helperSrc');
       }

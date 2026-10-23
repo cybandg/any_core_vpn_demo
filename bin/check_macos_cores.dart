@@ -1,5 +1,5 @@
 // Entry point for: dart run any_core_vpn:check_macos_cores
-// Forwards ALL arguments to tools/macos/check_macos_cores.dart inside this package.
+// Forwards ALL arguments to tool/macos/check_macos_cores.dart inside this package.
 
 import 'dart:convert';
 import 'dart:io';
@@ -57,7 +57,7 @@ Future<String> resolvePluginRoot() async {
 )
 Future<void> main(List<String> argv) async {
   final pluginRoot = await resolvePluginRoot();
-  final script = '$pluginRoot/tools/macos/check_macos_cores.dart';
+  final script = '$pluginRoot/tool/macos/check_macos_cores.dart';
 
   if (!File(script).existsSync()) {
     stderr.writeln('ERROR: script not found: $script');

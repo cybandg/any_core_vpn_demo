@@ -1,4 +1,4 @@
-## 0.8.0 Initial 
+## 0.8.1 Initial 
 
 🎉 Initial release of the public demo / freemium edition.
 

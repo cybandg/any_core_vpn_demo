@@ -3,7 +3,7 @@ description: >-
   Flutter VPN plugin with a unified Dart API for sing-box (singbox) and Xray-core on Android, Windows (in full version) and macOS. 
   Supports share links, JSON configs and routing.
 repository: https://github.com/cybandg/any_core_vpn_demo
-version: 0.8.0
+version: 0.8.1
 
 topics:
   - vpn

@@ -5,7 +5,7 @@
 // are present in <plugin_root>/macos/cores and match manifest.json checksums.
 //
 // Designed to be called from the Xcode "Run Script" build phase:
-//   "$DART" "$PLUGIN_ROOT/tools/macos/check_macos_cores.dart"
+//   "$DART" "$PLUGIN_ROOT/tool/macos/check_macos_cores.dart"
 // Exit code 0 = OK, 1 = missing/corrupt (fails the Xcode build).
 //
 // Options:
@@ -23,7 +23,7 @@ const _usage = '''
 check_macos_cores.dart - verify macOS cores integrity
 
 Usage:
-  dart tools/macos/check_macos_cores.dart [--cores-dir <path>] [--quiet]
+  dart tool/macos/check_macos_cores.dart [--cores-dir <path>] [--quiet]
 
 Exit codes:
   0  cores present and checksums match
@@ -31,7 +31,7 @@ Exit codes:
 ''';
 
 Future<void> main(List<String> argv) async {
-  // <plugin_root>/tools/macos/this_file.dart
+  // <plugin_root>/tool/macos/this_file.dart
   final scriptDir = File.fromUri(Platform.script).parent;
   final pluginRoot = scriptDir.parent.parent;
 

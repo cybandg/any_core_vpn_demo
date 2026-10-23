@@ -1,5 +1,5 @@
 // Entry point for: dart run any_core_vpn:check_cores
-// Forwards ALL arguments to tools/check_cores.dart inside this package.
+// Forwards ALL arguments to tool/check_cores.dart inside this package.
 
 import 'dart:convert';
 import 'dart:io';
@@ -56,7 +56,7 @@ Future<String> resolvePluginRoot() async {
 )
 Future<void> main(List<String> argv) async {
   final pluginRoot = await resolvePluginRoot();
-  final script = '$pluginRoot/tools/check_cores.dart';
+  final script = '$pluginRoot/tool/check_cores.dart';
 
   if (!File(script).existsSync()) {
     stderr.writeln('ERROR: script not found: $script');

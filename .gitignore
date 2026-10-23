@@ -146,7 +146,7 @@ publish/secrets.env
 .publish_mirror/
 .publish_staging/
 
-/tools/.android-cores-cache
+/tool/.android-cores-cache
 /android/src/main/jniLibs
 lib.txt
 bin.txt

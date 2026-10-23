@@ -1,5 +1,5 @@
 // Entry point for: dart run any_core_vpn:setup_android_cores
-// Forwards ALL arguments to tools/android/setup_android_cores.dart.
+// Forwards ALL arguments to tool/android/setup_android_cores.dart.
 
 import 'dart:convert';
 import 'dart:io';
@@ -109,7 +109,7 @@ Future<String> resolvePluginRoot() async {
 )
 Future<void> main(List<String> argv) async {
   final pluginRoot = await resolvePluginRoot();
-  final script = '$pluginRoot/tools/android/setup_android_cores.dart';
+  final script = '$pluginRoot/tool/android/setup_android_cores.dart';
 
   if (!File(script).existsSync()) {
     stderr.writeln('ERROR: script not found: $script');

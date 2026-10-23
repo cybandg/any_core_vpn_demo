@@ -14,12 +14,12 @@
 // For hev-socks5-tunnel extraction: unzip OR bsdtar OR PowerShell (Windows).
 //
 // Usage:
-//   dart run tools/android/setup_android_cores.dart
-//   dart run tools/android/setup_android_cores.dart --xray-version 26.7.28 --singbox-version 1.14.0
-//   dart run tools/android/setup_android_cores.dart --hev-version 2.18.0
-//   dart run tools/android/setup_android_cores.dart --skip-hev
-//   dart run tools/android/setup_android_cores.dart --optimize-size
-//   dart run tools/android/setup_android_cores.dart \
+//   dart run tool/android/setup_android_cores.dart
+//   dart run tool/android/setup_android_cores.dart --xray-version 26.7.28 --singbox-version 1.14.0
+//   dart run tool/android/setup_android_cores.dart --hev-version 2.18.0
+//   dart run tool/android/setup_android_cores.dart --skip-hev
+//   dart run tool/android/setup_android_cores.dart --optimize-size
+//   dart run tool/android/setup_android_cores.dart \
 //     --custom-singbox-build-flags "-platform android/arm64,android/arm" \
 //     --custom-xray-build-flags "-tags=mytag"
 
@@ -869,8 +869,8 @@ Options:
 Future<void> main(List<String> argv) async {
   final scriptDir = File.fromUri(
     Platform.script,
-  ).parent; // <root>/tools/android
-  final toolRoot = scriptDir.parent; // <root>/tools
+  ).parent; // <root>/tool/android
+  final toolRoot = scriptDir.parent; // <root>/tool
   final pluginRoot = toolRoot.parent; // <root>
 
   var configFile = '${pluginRoot.path}${sep}setup_cores.json';
